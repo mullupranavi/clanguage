@@ -1,0 +1,41 @@
+def traverse_list(lst):
+    print("Traversing the list:")
+    for item in lst:
+        print(item, end=" ")
+    print("\n")
+
+def insert_element(lst, index, element):
+    lst.insert(index, element)
+    print(f"After inserting {element} at index {index}: {lst}")
+
+def delete_element(lst, index):
+    if 0 <= index < len(lst):
+        removed = lst.pop(index)
+        print(f"After deleting element at index {index} (removed {removed}): {lst}")
+    else:
+        print("Invalid index for deletion.")
+
+def linear_search(lst, target):
+    for i, val in enumerate(lst):
+        if val == target:
+            print(f"Element {target} found at index {i}")
+            return
+    print(f"Element {target} not found in the list.")
+
+def update_element(lst, index, new_value):
+    if 0 <= index < len(lst):
+        old_value = lst[index]
+        lst[index] = new_value
+        print(f"Updated index {index} from {old_value} to {new_value}: {lst}")
+    else:
+        print("Invalid index for update.")
+
+# Test the functions
+lst = [5, 3, 8, 1, 9]
+print(f"Initial list: {lst}\n")
+
+traverse_list(lst)
+insert_element(lst, 2, 7)
+delete_element(lst, 1)
+linear_search(lst, 8)
+update_element(lst, 3, 4)
